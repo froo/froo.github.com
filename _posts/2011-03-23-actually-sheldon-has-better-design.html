@@ -11,9 +11,7 @@ meta:
   views: "290"
   _edit_lock: "1300940500"
 ---
-这是一篇译文，从开发者的角度调侃了TBBT。
-
-原文作者：Ching-Lan Huang (黃 青嵐)
+这是一篇译文，从iOS Developer的角度调侃了TBBT。
 
 原文地址：http://digdog.tumblr.com/post/3628378498/actually-sheldon-has-better-design-if-youre
 
@@ -27,33 +25,33 @@ meta:
 <h3>这是个什么应用？</h3>
 这是一个基于手写识别的算式解析应用，或者用Sheldon的话说：“一个对算式计算进行专门优化的出奇实用的计算器。”用iPhone拍摄一张算式的照片，对其进行手写识别，然后通过一个算式解析引擎来运算，最后输出结果！
 <h3>学习Cocoa</h3>
-在剧中，我们可以通过Leonard家中的白板看到一些实际的Objective-C代码段和一些有趣的界面设计草稿：
+在剧中，我们可以通过Leonard家中的白板看到一些实际的Objective-C代码片段和一些有趣的界面设计草稿：
 
 <img class="alignnone" title="actually-sheldon-has-better-design-2" src="http://media.tumblr.com/tumblr_lhi5v4nws01qa95u5.png" alt="" width="500" height="436" />
 
-他们使用了一个CRecognition，来生成一个UIImage类型的实例，然后很可惜他们给这个实例取的名字是：_Photo，这不是Apple所倡导的命名风格。
+他们将UIImage属性传递给一个CRecognition实例，然后很可惜他们给这个属性取的名字是：_Photo，这不是Apple所倡导的命名风格。
 
 <!--more-->
 
 <img class="alignnone" title="actually-sheldon-has-better-design-3" src="http://media.tumblr.com/tumblr_lhi5vfQBnW1qa95u5.png" alt="" width="500" height="268" />
 
-第二天一早，Sheldon开始进行他自己的设计，仔细观察，可以发现他的设计显然比Leonard的好多了。
+第二天一早，Sheldon开始自行设计。仔细观察，可以发现他的设计显然比Leonard的更理想。
 
 <img class="alignnone" title="actually-sheldon-has-better-design-4" src="http://media.tumblr.com/tumblr_lhi5vrOGHp1qa95u5.png" alt="" width="500" height="482" />
 
-比如说，在这个实用类型的应用中，Sheldon采用了类似于内置的摄像/股票应用中那样的页面翻转视图设计。在屏幕SPhotoView的一边，中间有一个“拍摄”按钮；在屏幕的另一边，是算式视图(SEquationView)，底部和一些按钮在一起的是一个表格视图(UITableView)。
+比如说，既然这是一个工具类型的应用，Sheldon采用了类似于内置的摄像/股票应用中那样的页面翻转视图设计。屏幕一边是SPhotoView，其中有一个“拍摄”按钮；在屏幕的另一边，是算式视图(SEquationView)，底部是一个由一些按钮组成的UITableView。
 
 <img class="alignnone" title="actually-sheldon-has-better-design-5" src="http://media.tumblr.com/tumblr_lhi5w5Yrr51qa95u5.png" alt="" width="500" height="384" />
 
-从这张图上能看到更多细节：通过表格视图来展示扫描得到的算式，并且支持横竖屏翻转。同时，右边的白板告诉我们，Sheldon对UIViewController视图层级的设计理念理解更为透彻。
+从这张图上能看到更多细节：底部的UITableView用来展示扫描过的算式历史记录，并且支持横竖屏翻转来查看关于算式的更多细节。同时，右边的白板告诉我们，Sheldon对UIViewController视图层级的设计理念理解更为透彻。
 
 <img class="alignnone" title="actually-sheldon-has-better-design-8" src="http://media.tumblr.com/tumblr_lhi5whzcD31qa95u5.png" alt="" width="500" height="393" />
 
-随后，Leonard小队在进行引用计数的内存管理时，使用了保有属性self.photo，同时通过类方法返回一个autorelease的CRecognition对象，声明没有内存泄露。真糟糕！当创建/释放实例对象的时候，应该尽量使用alloc+release方法来操作，减少那些autorelease的对象。
+随后，Leonard小队在处理一些内存管理工作：他们使用了self属性，同时通过类方法返回一个autorelease的CRecognition对象，声明没有内存泄露。遗憾的是：当创建/释放实例对象的时候，应该尽量使用alloc+release方法来操作，减少那些autorelease的对象。
 
-<img class="alignnone" title="actually-sheldon-has-better-design-6" src="http://media.tumblr.com/tumblr_lhi5wt2WnT1qa95u5.png" alt="" width="500" height="488" />
+<!-- <img class="alignnone" title="actually-sheldon-has-better-design-6" src="http://media.tumblr.com/tumblr_lhi5wt2WnT1qa95u5.png" alt="" width="500" height="488" />
 
-从这张图中可以看到Leonard应用中类的层级，几乎都以字母C（代表"Class"，类）开始命名：CAppDelegate, CMainView, CCameraView, CSymbolicView等等。他们或许应该按照约定，使用像“LRH”这样的缩写，代表Leonard, Rajesh和Howard。
+从这张图中可以看到Leonard应用中类的层级，几乎都以字母C（代表"Class"，类）开始命名：CAppDelegate, CMainView, CCameraView, CSymbolicView等等。他们或许应该按照约定，使用像“LRH”这样的缩写，代表Leonard, Rajesh和Howard。 -->
 
 <img class="alignnone" title="actually-sheldon-has-better-design-7" src="http://media.tumblr.com/tumblr_lhi5xmHCPw1qa95u5.png" alt="" width="500" height="419" />
 

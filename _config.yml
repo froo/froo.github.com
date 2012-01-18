@@ -1,22 +1,2 @@
-# This is the default format. 
-# For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink: /:categories/:year/:month/:day/:title 
-auto: true
+# markdown: rdiscount
 pygments: true
-var:
-  archive_path: /archive.html
-  categories_path : /categories.html
-  tags_path : /tags.html
-  rss_path: /atom.xml
-
-production_url : http://froo.github.com # or your custom domain name
-title : Chenhui Zhang
-
-author :
-  name : Chenhui Zhang
-  email : peetryzch@gmail.com
-  github : froo
-  twitter : peetryzch
-  feedbuder : feedname
-
-exclude: .rbenv-version

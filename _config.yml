@@ -9,14 +9,14 @@ var:
   tags_path : /tags.html
   rss_path: /atom.xml
 
-production_url : http://username.github.com # or your custom domain name
-title : Jekyll Boostrap
+production_url : http://froo.github.com # or your custom domain name
+title : Chenhui Zhang
 
 author :
-  name : Name Lastname
-  email : blah@email.test
-  github : username
-  twitter : username
+  name : Chenhui Zhang
+  email : peetryzch@gmail.com
+  github : froo
+  twitter : peetryzch
   feedbuder : feedname
 
 exclude: .rbenv-version

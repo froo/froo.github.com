@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Jekyll Quick Start</title>
+    
+    <meta name="author" content="Name Lastname">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/css/1.4.0/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="/">Jekyll Boostrap</a>
+          <ul class="nav">
+            
+            
+            
+
+
+
+  
+  
+  	
+  	<li><a href="/archive.html">Archive</a></li>
+  	
+ 
+  
+
+  
+
+  
+  
+  	
+  	<li><a href="/categories.html">Categories</a></li>
+  	
+ 
+  
+
+  
+
+  
+  
+  	
+  	<li><a href="/pages.html">Pages</a></li>
+  	
+ 
+  
+
+  
+
+  
+  
+  	
+  	<li><a href="/tags.html">Tags</a></li>
+  	
+ 
+  
+
+
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>Jekyll Quick Start <small>Supporting tagline</small></h1>
+</div>
+
+<div class="row">
+  <div class="span10">
+    <h2 id='1_install_jekyllbootstrap'>1. Install Jekyll-Bootstrap</h2>
+
+<p><a href='/index.html#start-now'>Install Jekyll-Bootsrap</a> if you haven&#8217;t already. Jekyll-bootstrap is a clean base framework for your blog. It includes two themes, some useful pages, and bootstrap include-helpers.</p>
+
+<h2 id='2_run_jekyll_locally'>2. Run Jekyll Locally</h2>
+
+<p>In order to preview your blog locally you&#8217;ll need to install the jekyll gem. Note gem dependencies will also be installed.</p>
+
+<pre><code>$ gem install jekyll</code></pre>
+
+<p>If you run into a problem please consult the original <a href='https://github.com/mojombo/jekyll/wiki/Install'>Jekyll installation documentation</a>. You can also <a href='http://github.com/plusjade'>contact me</a> through github.</p>
+
+<p>Once the gem is installed you can navigate to your Jekyll-bootstrap directory and run jekyll:</p>
+
+<pre><code>$ cd jekyll-bootstrap
+$ jekyll --server</code></pre>
+
+<p>Your blog is now available at: <a href='http://localhost:4000/'>http://localhost:4000/</a>.</p>
+
+<h2 id='2_choose_a_theme'>2. Choose a Theme</h2>
+
+<p>Jekyll-bootstrap has a basic theming system that I&#8217;ll be steadily improving. You can read about how to choose and customize a theme in the <a href='/usages/theming.html'>Theming</a> section.</p>
+
+<h2 id='3_create_some_content'>3. Create Some Content</h2>
+
+<h3 id='create_a_post'>Create a Post</h3>
+
+<p>Create a file with valid date and title in the filename and place it into the <code>_posts</code> folder. Jekyll-bootstrap provides many post files for you to copy from to better understand the formatting requirements.</p>
+
+<h3 id='create_a_page'>Create a Page</h3>
+
+<p>Create a file anywhere in the root directory, for example <code>/about.md</code> and remember to provide valid YAML Front Matter so Jekyll recognizes the file as a page.</p>
+
+<p>Jekyll-bootstrap provides many page examples for reference. You can study the source and customize it for your own needs.</p>
+<ul>
+
+
+
+
+
+  
+  
+  	
+  	<li><a href='/archive.html'>Archive</a></li>
+  	
+ 
+  
+
+  
+  
+  	
+  	<li><a href='/atom.xml' /></li>
+  	
+ 
+  
+
+  
+  
+  	
+  	<li><a href='/categories.html'>Categories</a></li>
+  	
+ 
+  
+
+  
+  
+  	
+  	<li><a href='/index.html'>Hello from Jekyll-Bootstrap</a></li>
+  	
+ 
+  
+
+  
+  
+  	
+  	<li><a href='/pages.html'>Pages</a></li>
+  	
+ 
+  
+
+  
+  
+  	
+  	<li><a href='/sitemap.txt'>Sitemap</a></li>
+  	
+ 
+  
+
+  
+  
+  	
+  	<li><a href='/tags.html'>Tags</a></li>
+  	
+ 
+  
+
+
+
+
+
+</ul>
+<h2 id='4_publish'>4. Publish</h2>
+
+<p>After you&#8217;ve added posts or made changes to your theme or other files, simply commit them to your git repo and push the commits up to GitHub.</p>
+
+<p>A GitHub post-commit hook will automatically deploy your changes to your hosted blog. You will receive a success or failure notice for every commit you make to your blog.</p>
+
+<h2 id='5_customize'>5. Customize</h2>
+
+<p>Jekyll-bootstrap can be used as-is as a basic blogging platform with little need to understand what&#8217;s going on under the hood.</p>
+
+<p>However I&#8217;m betting you want to get your hands dirty. The following outlines the deeper Jekyll-Bootstrap documentation.</p>
+
+<h3 id='jekyll_introduction'>Jekyll Introduction</h3>
+
+<p>The <a href='/lessons/2011/12/29/jekyll-introduction'>Jekyll Introduction</a> is meant for core understanding of how and why Jekyll works the way it does. You must start with this in order to understand everything else in Jekyll-Bootstrap.</p>
+
+<h3 id='the_api_section'>The API Section</h3>
+
+<p>The API pages document main data-structures and design strategies used in Jekyll and Jekyll-Bootstrap.</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/usage/2011/10/30/jekyll-theming" title="Jekyll Theming">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/api/2011/11/27/theme-api" title="Theme Api">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>31 October 2011</span></div>
+
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; Name Lastname 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
+

@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Api</title>
+    
+    <meta name="author" content="Name Lastname">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/css/1.4.0/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="/">Jekyll Boostrap</a>
+          <ul class="nav">
+            
+            
+            
+
+
+
+  
+  
+  	
+  	<li><a href="/archive.html">Archive</a></li>
+  	
+ 
+  
+
+  
+
+  
+  
+  	
+  	<li><a href="/categories.html">Categories</a></li>
+  	
+ 
+  
+
+  
+
+  
+  
+  	
+  	<li><a href="/pages.html">Pages</a></li>
+  	
+ 
+  
+
+  
+
+  
+  
+  	
+  	<li><a href="/tags.html">Tags</a></li>
+  	
+ 
+  
+
+
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>Bootstrap Api <small>Supporting tagline</small></h1>
+</div>
+
+<div class="row">
+  <div class="span10">
+    <p>The Jekyll Bootstrap API consists of custom includes and development strategies meant to provide a more modular and sensible coding experience when working with Liquid and Jekyll.</p>
+
+<h2 id='philosophy'>Philosophy</h2>
+
+<p>Jekyll-bootstrap uses an &#8216;include&#8217; helper strategy to encapsulate frequently used code logic. This makes for more modular and DRY code.</p>
+
+<p>The &#8216;include&#8217; helper is the same concept as rails&#8217; view helper modules, just obviously much more constrained due to Liquid.</p>
+
+<h2 id='includehelper_strategy'>Include-helper Strategy</h2>
+
+<h3 id='define_a_new_method'>Define a new &#8220;method&#8221;</h3>
+
+<p>The include helper strategy is meant to emulate a ruby method. First encapsulate your liquid code logic in a Jekyll include file. <br />example: <code>helpers/tags_list.html</code> which is a helper to list tags and their total counts.</p>
+<pre><code>&#123;% for tag in tags_list %&#125;
+  &lt;li&gt;&lt;a href="&#123;{ site.var.tags_path }&#125;&#123;{ tag[0] }&#125;-ref"&gt;&#123;{ tag[0] }&#125; &lt;span&gt;&#123;{tag[1].size}&#125;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&#123;% endfor %&#125;
+
+&#123;% assign tags_list = null %&#125;</code></pre>
+<p>In order to emulate passing arguments to the method, your include should reference localized variables whenever possible. Now we can pass in arguments by defining the local variables immediately before calling the include file:</p>
+
+<h3 id='invoking_the_method'>Invoking the Method.</h3>
+<pre><code>&lt;ul&gt;
+  &#123;% assign tags_list = site.tags %&#125;
+  &#123;% include helpers/tags_list.html %&#125;
+&lt;/ul&gt;</code></pre>
+<p>You can define as many &#8220;arguments&#8221; as you want, just remember to nullify them all at the end of your include to preserve modularity.</p>
+
+<h3 id='gotchas'>Gotchas</h3>
+
+<p>In Liquid, it is impossible to inline assign a variable to anything other than a string. This means you can&#8217;t pass in arrays, hashes, etc. However, as shown above, you can pass-by-reference, and assign local variables to variables that already exist.</p>
+
+<p>So to pass in data-structures, you need to define them in your YAML Front Matter, or _config.html file first, then pass them in by reference.</p>
+
+<h2 id='contibuting'>Contibuting</h2>
+
+<p>If you have a good idea for another helper, please follow the outlines above, then submit a pull request to <a href='http://github.com/plusjade/jekyll-bootstrap'>Jekyll-Bootstrap</a> and I&#8217;ll include it.</p>
+
+<h2 id='current_jekyllbootstrap_helpers'>Current Jekyll-Bootstrap Helpers</h2>
+<ul>
+    
+  
+
+
+
+  
+  
+  	
+  	<li><a href='/helpers/2011/09/30/tags-list'>Tags List</a></li>
+  	
+ 
+  
+
+  
+  
+  	
+  	<li><a href='/helpers/2011/09/29/pages-list'>Pages List</a></li>
+  	
+ 
+  
+
+  
+  
+  	
+  	<li><a href='/helpers/2011/09/28/categories-list'>Categories List</a></li>
+  	
+ 
+  
+
+  
+  
+  	
+  	<li><a href='/helpers/2011/09/27/posts-collate'>Posts Collate</a></li>
+  	
+ 
+  
+
+
+
+
+
+</ul>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/api/2011/11/27/theme-api" title="Theme Api">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/api/2011/11/29/jekyll-liquid-api" title="Jekyll Liquid Api">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>28 November 2011</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+   
+  	<li><a href="/tags.html#api-ref">api <span>3</span></a></li>
+  
+
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; Name Lastname 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
+

@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Template Data Api</title>
+    
+    <meta name="author" content="Name Lastname">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/css/1.4.0/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="/">Jekyll Boostrap</a>
+          <ul class="nav">
+            
+            
+            
+
+
+
+  
+  
+  	
+  	<li><a href="/archive.html">Archive</a></li>
+  	
+ 
+  
+
+  
+
+  
+  
+  	
+  	<li><a href="/categories.html">Categories</a></li>
+  	
+ 
+  
+
+  
+
+  
+  
+  	
+  	<li><a href="/pages.html">Pages</a></li>
+  	
+ 
+  
+
+  
+
+  
+  
+  	
+  	<li><a href="/tags.html">Tags</a></li>
+  	
+ 
+  
+
+
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>Template Data Api <small>Supporting tagline</small></h1>
+</div>
+
+<div class="row">
+  <div class="span10">
+    <p>The Template data API is a comprehensive list of all data accessible in templates through using the Liquid templating language. The next lesson will focus on <a href='/api/2011/11/29/jekyll-liquid-api'>accessing Jekyll data via Liquid</a></p>
+
+<h2 id='global_pagepost_data'>Global Page/Post Data</h2>
+
+<p>Every content file that Jekyll processes is either a page or a post. In both cases the data relative to the specific page or post being rendered within the template is accessible through the <code>page</code> variable. The page variable is a globally accessible variable available to all templates, posts, pages, and includes being rendered for the given post/page instance.</p>
+
+<pre><code>/* The following format represents a Jekyll::Post or Jekyll::Page object. Jekyll::Post and Jekyll::Page objects may be nested in other variables in which case you can expect this same format: */
+page = {
+ &quot;layout&quot;=&gt;&quot;post&quot;,
+ &quot;categories&quot;=&gt;[&quot;lessons&quot;],
+ &quot;title&quot;=&gt;&quot;Jekyll Liquid Api&quot;,
+ &quot;url&quot;=&gt;&quot;/lessons/jekyll-liquid-api.html&quot;,
+ &quot;date&quot;=&gt;2011-01-27 00:00:00 -0800,
+ &quot;id&quot;=&gt;&quot;/lessons/jekyll-liquid-api&quot;,
+ &quot;next&quot;=&gt; #Jekyll:Post @id=&quot;/lessons/template-data-api&quot;,
+ &quot;previous&quot;=&gt; #Jekyll:Post @id=&quot;/lessons/configuring-urls&quot;,
+ &quot;tags&quot;=&gt;[&quot;tagname1&quot;, &quot;tagname2&quot;],
+ &quot;custom_variable&quot;=&gt; [&quot;a&quot;, &quot;custom&quot;, &quot;defined&quot;, &quot;data-structure&quot;],
+ &quot;content&quot;=&gt;&quot;... this is the unparsed raw html page/post content ...&quot;
+}</code></pre>
+
+<h3 id='setting_custom_data'>Setting Custom Data</h3>
+
+<p>You can set custom variables through the post or page Yaml Front matter and they will be included in the page hash.</p>
+
+<p>One important thing to note is that each Jekyll &#8220;rendering&#8221; instance is treating as a page/post object. ALL YAML Front matter is merged into the current page/post instance. So if you define custom data in the post file, then define custom data in the sub-template, and also in the root template, all data will merge into the same page hash.</p>
+
+<h2 id='content_data'>Content Data</h2>
+
+<p>Jekyll uses a special variable named <code>content</code> to refer to the current page/post content.</p>
+
+<p>The difference between <code>content</code> and <code>page.content</code> is the former is parsed with markdown or textile while the latter is raw.</p>
+
+<p>The <code>content</code> variable is only accessible in template files and include files provided the include is included into a template.</p>
+
+<h3 id='content_in_primary_templates'>Content in Primary Templates.</h3>
+
+<p>When calling <code>content</code> in a primary template the content includes any sub-templates previously rendered by the page/post.</p>
+
+<h3 id='content_in_subtemplates'>Content in Sub-Templates.</h3>
+
+<p>When calling <code>content</code> in a sub-template <code>content</code> includes any sub-sub-templates previously rendered by the page/post. If there are none, <code>content</code> just reflects the page/post as processed by markdown or textile.</p>
+
+<h2 id='global_site_data'>Global Site Data</h2>
+
+<p>This data is available anywhere liquid is available. This includes templates, posts, pages, and includes.</p>
+
+<pre><code>site = {
+  &quot;related_posts&quot;=&gt;
+    [...(Array of liquified Jekyll::Post objects)...],
+ &quot;safe&quot;=&gt;false,
+ &quot;auto&quot;=&gt;true,
+ &quot;server&quot;=&gt;true,
+ &quot;server_port&quot;=&gt;4000,
+ &quot;source&quot;=&gt;&quot;/Users/jade/Dropbox/github/jekyll-bootstrap&quot;,
+ &quot;destination&quot;=&gt;&quot;/Users/jade/Dropbox/github/jekyll-bootstrap/_site&quot;,
+ &quot;plugins&quot;=&gt;&quot;/Users/jade/Dropbox/github/jekyll-bootstrap/_plugins&quot;,
+ &quot;future&quot;=&gt;true,
+ &quot;lsi&quot;=&gt;false,
+ &quot;pygments&quot;=&gt;false,
+ &quot;markdown&quot;=&gt;&quot;maruku&quot;,
+ &quot;permalink&quot;=&gt;&quot;/:categories/:title.html&quot;,
+ &quot;markdown_ext&quot;=&gt;&quot;markdown,mkd,mkdn,md&quot;,
+ &quot;textile_ext&quot;=&gt;&quot;textile&quot;,
+ &quot;maruku&quot;=&gt;
+  {
+   &quot;use_tex&quot;=&gt;false,
+   &quot;use_divs&quot;=&gt;false,
+   &quot;png_engine&quot;=&gt;&quot;blahtex&quot;,
+   &quot;png_dir&quot;=&gt;&quot;images/latex&quot;,
+   &quot;png_url&quot;=&gt;&quot;/images/latex&quot;
+  },
+ &quot;rdiscount&quot;=&gt;
+  {
+    &quot;extensions&quot;=&gt;[]
+  },
+ &quot;redcarpet&quot;=&gt;
+  {
+    &quot;extensions&quot;=&gt;[]
+  },
+ &quot;kramdown&quot;=&gt;
+  {
+   &quot;auto_ids&quot;=&gt;true,
+   &quot;footnote_nr&quot;=&gt;1,
+   &quot;entity_output&quot;=&gt;&quot;as_char&quot;,
+   &quot;toc_levels&quot;=&gt;&quot;1..6&quot;,
+   &quot;use_coderay&quot;=&gt;false,
+   &quot;coderay&quot;=&gt;
+    {
+     &quot;coderay_wrap&quot;=&gt;&quot;div&quot;,
+     &quot;coderay_line_numbers&quot;=&gt;&quot;inline&quot;,
+     &quot;coderay_line_number_start&quot;=&gt;1,
+     &quot;coderay_tab_width&quot;=&gt;4,
+     &quot;coderay_bold_every&quot;=&gt;10,
+     &quot;coderay_css&quot;=&gt;&quot;style&quot;
+    }
+  },
+ &quot;time&quot;=&gt;2011-12-20 14:03:53 -0800,
+ &quot;posts&quot;=&gt;
+  [...(Array of liquified Jekyll::Post objects)...],
+ &quot;pages&quot;=&gt;
+  [...(Array of liquified Jekyll::Page objects)...],
+ &quot;html_pages&quot;=&gt;
+  [...(Array of liquified Jekyll::Page objects)...],
+ &quot;categories&quot;=&gt;
+  {&quot;examples&quot;=&gt;
+    [...(Array of liquified Jekyll::Post objects)...],
+   &quot;lessons&quot;=&gt;
+    [...(Array of liquified Jekyll::Post objects)...],
+ &quot;tags&quot;=&gt;
+  {
+   &quot;permalinks&quot;=&gt;
+    [...(Array of liquified Jekyll::Post objects)...],
+   &quot;urls&quot;=&gt;
+    [...(Array of liquified Jekyll::Post objects)...],
+   &quot;templating&quot;=&gt;
+    [...(Array of liquified Jekyll::Post objects)...],
+   &quot;liquid&quot;=&gt;
+    [...(Array of liquified Jekyll::Post objects)...],
+   &quot;posts&quot;=&gt;
+    [...(Array of liquified Jekyll::Post objects)...]
+  }
+}</code></pre>
+
+<h3 id='sitewide_custom_data'>Sitewide Custom Data</h3>
+
+<p>Set sitewide custom data using the config file.</p>
+
+<p>Variables held in the config file get merged into the site variable.</p>
+
+<h2 id='categories'>Categories</h2>
+
+<p>Categories may only be applied to posts and are available on a per-post basis as well as aggregated in a sitewide global variable, i.e. all categories available for the website.</p>
+
+<p>When iterating over categories the order is alpha descending</p>
+
+<h2 id='tags'>Tags</h2>
+
+<p>Tags may only be applied to posts and are available on a per-post basis as well as aggregated in a sitewide global variable, i.e. all tags available for the website.</p>
+
+<p>When iterating over tags the order is alpha descending.</p>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/api/2011/11/29/jekyll-liquid-api" title="Jekyll Liquid Api">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/lessons/2011/12/29/jekyll-introduction" title="Jekyll Introduction">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>30 November 2011</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+   
+  	<li><a href="/tags.html#templating-ref">templating <span>1</span></a></li>
+   
+  	<li><a href="/tags.html#liquid-ref">liquid <span>1</span></a></li>
+  
+
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; Name Lastname 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
+

@@ -1,0 +1,151 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- <meta name="apple-mobile-web-app-capable" content="yes" /> -->
+<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" /> -->
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<!-- <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script> -->
+<!-- <script type="text/javascript" src="helloworld.js"></script> -->
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var isLoaded = false;
+		var hearts = [];
+		var isAlphaed = false;
+		var isFloated = false;
+
+		var theWidth = $(document).width();
+		var theHeight = $(document).height();
+
+		function toGenerate(x,y,index){
+			var pic = Math.round(Math.random()*(4-1)+1);
+			var theHeart = '<div class="heart" id=' +index+ ' style="position:absolute;width:100px;height,100px"><img src="heart_' +pic +'.png"></div>';
+			$('.hearts').append(theHeart);
+			hearts.push(theHeart);
+			// $('.hearts > .heart:last').css({'left':theWidth/2,'top':theHeight/2,'opacity':0}).animate(
+			// 	{
+			// 		left:x,
+			// 		top:y,
+			// 		opacity:1
+			// 	},
+			// 	1500
+			// );
+			$('.hearts > .heart:last').css({'left':x,'top':y}).hide().fadeIn('1500');
+		}
+
+		$(document).click(function(){
+			if (!isLoaded) {
+				//get count
+				var column = Math.round(theWidth/100);
+				var row = Math.round(theHeight/100);
+
+				//generate
+				for (var i = 0; i < column*row; i++) {
+					var index = Math.round(Math.random()*(4-1));
+
+					var theX = i%column*100;
+					var theY = Math.round(i/column)*100;
+					toGenerate(theX,theY,i);
+				};
+
+				isLoaded = true;
+			}
+			else{
+				var clickX = event.clientX;
+				var clickY = event.clientY;
+				toGenerate(clickX,clickY,hearts.length+1);
+
+				//remove
+			};
+
+			
+		});
+
+		//alphaed
+		function alphaed(){
+			$('.hearts > .heart:even').fadeTo(1500,isAlphaed?1:.30);
+			isAlphaed = !isAlphaed;
+			setTimeout(alphaed,1500);
+		}
+		alphaed();
+
+		//float
+		function floated(){
+			for (var i = 0; i < hearts.length; i++) {
+				var l = parseInt($('.hearts >.heart:eq(' + i +')').css('left').replace('px',''));
+				var t = parseInt($('.hearts >.heart:eq(' + i +')').css('top').replace('px',''));
+				var f = isFloated?-(Math.round(Math.random()*100)):(Math.round(Math.random()*100));
+				l += f;
+				t += f;
+
+				if (l<0||l>theWidth||t<0||t>theHeight) {
+					$('.hearts >.heart:eq(' + i +')').animate(
+						{
+							top:Math.random()*theHeight,
+							left:Math.random()*theWidth
+						},
+						1500
+						);
+					}
+
+					else{
+						$('.hearts >.heart:eq(' + i +')').animate(
+						{
+							top:t,
+							left:l
+						},
+						1500
+						);
+					};
+						
+				};
+				isFloated = !isFloated;
+				setTimeout(floated,1500);
+			}
+		floated();
+
+		setTimeout(function(){
+			$('.hearts').fadeOut(2000);
+		},1000*15);
+
+		setTimeout(function(){
+			$('.hearts').remove();
+			$('body').append('<div class="words"><p>♥ ~ I LOVE YOU ~ ♥</p></div>').hide().fadeIn(2000);
+			$('.words').css({'position':'relative' ,'top':'50%'});
+			$('p').css({'color':'white','font-size':'64px','font':'bold'});
+		},1000*17);
+
+		// $(document).tap(function(){
+		// 	document.write ('<p>touch</p>');
+		// })
+	});
+	
+</script>
+
+<style type="text/css">
+body{
+	background-image:url('cris_bg.png');
+	background-repeat:repeat;
+}
+p{
+	margin-left: auto;
+	margin-right:auto;
+	width:50%;
+}
+</style>
+
+<title>FRHeartFloat.js</title>
+</head>
+
+<body>
+	<div class="hearts">
+	</div>
+
+	<!-- <audio controls = 'controls'>
+		<source src = 'bg_chris.m4a' type='audio/m4a'/>
+	</audio> -->
+
+</body>
+
+</html>

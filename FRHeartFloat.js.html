@@ -50,6 +50,17 @@
 				};
 
 				isLoaded = true;
+
+				setTimeout(function(){
+					$('.hearts').fadeOut(2000);
+				},1000*25);
+
+				setTimeout(function(){
+					$('.hearts').remove();
+					$('body').append('<div class="words"><p>♥ ~ I LOVE YOU ~ ♥</p></div>').hide().fadeIn(2000);
+					$('.words').css({'position':'relative' ,'top':'50%'});
+					$('p').css({'color':'white','font-size':'64px','font':'bold'});
+				},1000*27);
 			}
 			else{
 				var clickX = event.clientX;
@@ -104,21 +115,6 @@
 				setTimeout(floated,1500);
 			}
 		floated();
-
-		setTimeout(function(){
-			$('.hearts').fadeOut(2000);
-		},1000*15);
-
-		setTimeout(function(){
-			$('.hearts').remove();
-			$('body').append('<div class="words"><p>♥ ~ I LOVE YOU ~ ♥</p></div>').hide().fadeIn(2000);
-			$('.words').css({'position':'relative' ,'top':'50%'});
-			$('p').css({'color':'white','font-size':'64px','font':'bold'});
-		},1000*17);
-
-		// $(document).tap(function(){
-		// 	document.write ('<p>touch</p>');
-		// })
 	});
 	
 </script>

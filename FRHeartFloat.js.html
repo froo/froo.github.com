@@ -20,7 +20,7 @@
 
 		function toGenerate(x,y,index){
 			var pic = Math.round(Math.random()*(4-1)+1);
-			var theHeart = '<div class="heart" id=' +index+ ' style="position:absolute;width:100px;height,100px"><img src="heart_' +pic +'.png"></div>';
+			var theHeart = '<div class="heart" id=' +index+ ' style="position:absolute;width:100px;height,100px"><img src="images/heart_' +pic +'.png"></div>';
 			$('.hearts').append(theHeart);
 			hearts.push(theHeart);
 			// $('.hearts > .heart:last').css({'left':theWidth/2,'top':theHeight/2,'opacity':0}).animate(
@@ -125,7 +125,7 @@
 
 <style type="text/css">
 body{
-	background-image:url('cris_bg.png');
+	background-image:url('images/cris_bg.png');
 	background-repeat:repeat;
 }
 p{

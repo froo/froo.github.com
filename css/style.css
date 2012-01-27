@@ -1,0 +1,123 @@
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-image:url('/images/black_denim.png');
+  font-family:'Helvetica Neue', 'Luxi Sans', 'DejaVu Sans', Tahoma, 'Hiragino Sans GB', STHeiti !important;
+  font-size:normal;
+  color:#fff;
+  line-height:1.6;
+}
+
+h1{
+	font-size:240%;
+}
+
+p {
+  
+}
+
+a {
+  color: #60cade;
+  text-decoration:none;
+  cursor: auto;
+}
+
+a:hover {
+	text-shadow: 0 0 0.2em #60cade;
+}
+
+a:visited {
+  /*color: #67528a;*/
+}
+
+/*table {
+  font-size: inherit;
+  font: 100%;
+}*/
+
+/*****************************************************************************/
+/*
+/* Default
+/*
+/*****************************************************************************/
+
+.site{
+	width:40em;
+	margin: 3em auto 2em auto;
+}
+
+.footer{
+	margin-top: 3em;
+	margin-bottom: 2em;
+}
+
+.footer .avatar{
+	float: left;
+}
+
+.footer .foot-nav{
+	margin-left:66px;
+}
+
+.footer ul{
+	margin-top:0.3em;
+}
+
+.footer li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+.footer li a{
+	padding-right:8px;
+}
+
+/*****************************************************************************/
+/*
+/* Home
+/*
+/*****************************************************************************/
+
+#home{
+	margin-top: 2em;
+}
+
+#home h3{
+	margin-bottom:0.5em;
+}
+
+#home ul{
+	list-style:none;
+}
+
+/*****************************************************************************/
+/*
+/* Posts
+/*
+/*****************************************************************************/
+
+#post{
+	margin-top:1em;
+}
+
+#post img{
+	margin: 0.8em auto 1.2em auto;
+	border: 1.6px solid #fff;
+}

@@ -1,15 +1,3 @@
----
-layout: post
-title: resume
-image: /images
-
----
-
-#张晨晖
-现居上海，关注前沿科技、设计趋势、新媒体阅读等。在业余时间，喜欢阅读和看动漫美剧。
-
-##做过的App
-
 <img width="100" height="100" src="images/icon_zsye.png">
 
 ###掌尚育儿 [iPhone](http://itunes.apple.com/app/id417220945?mt=8) [Android](https://market.android.com/details?id=com.yaya.yuer2) 
@@ -37,29 +25,6 @@ image: /images
 
 <img width="100" height="100" src="images/icon_basetemp.png">
 
-###基础体温 [iPhone]() 
-`等待审核` 
+###基础体温 [iPhone](http://itunes.apple.com/cn/app/id494766593?mt=8) 
 
-一个花费4天的快速项目，负责了设计（不包括视觉设计）和代码实现。
-
-####业余项目
-
-两个准备提交的小app。
-
-##了解我更多:
-
-* [博客](http://blog.chenhui.ch)
-* [Twitter](https://twitter.com/peetryzch)
-* [新浪微博](http://weibo.com/froo)
-* [知乎](http://www.zhihu.com/people/zhang-chen-hui)
-
-***
-	for (ITCompany *company in Shanghai.subCompanies){
-		if [company isHiring mobilePM]{
-			[contact me]
-		}
-	}
-
-<img width="24" height="24" src="images/icon_mail.png">邮箱&Gtalk [peetryzch@gmail.com](mailto:peetryzch@gmail.com)
-
-[Switch to English version](/index_en.html)
+一个花费4天的快速项目，负责了设计和代码实现。

@@ -25,9 +25,16 @@
 
 	<!-- Scripts -->
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.avatar').hover(function(){
+				
+			})
+		})
+	</script>
 
 	<!-- Title -->
-	<title>{{ page.title }}{% if page.title %} |{% endif %} Chenhui Zhang</title>
+	<title>{{ page.title }}{% if page.title %} |{% endif %} Streaming</title>
 </head>
 <body>
 <div class="site">
@@ -39,7 +46,9 @@
 
 
 	<!--  Post Content -->
+	<div class="post">
 	{{ content }}
+	</div>
 	<!--  Post Content -->
 
 	<!--  Footer Part -->
@@ -48,7 +57,11 @@
 			<img src="/images/avatar.jpg" alt="avatar" width="48px" height="48px">
 		</div>
 		<div class="foot-nav">
+<<<<<<< HEAD
 			<p>©2012 Chenhui</p>
+=======
+			<a href="/projects.html">Projects</a>
+>>>>>>> c
 			<ul>
 				<li><a href="https://twitter.com/peetryzch">Twitter</a></li>
 				<li><a href="http://weibo.com/froo">Weibo</a></li>

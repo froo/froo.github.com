@@ -139,6 +139,6 @@ table {
 
 @media only screen and (max-device-width:640px){
 	.post img{
-		width:600px;
+		border:none;
 	}
 }

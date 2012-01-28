@@ -128,4 +128,17 @@ table {
 .post img{
 	margin: 0.8em auto 1.2em auto;
 	border: 1.6px solid #fff;
+	display: block;
+}
+
+/*****************************************************************************/
+/*
+/* Media Query
+/*
+/*****************************************************************************/
+
+@media only screen and (max-device-width:640px){
+	.post img{
+		width:600px;
+	}
 }

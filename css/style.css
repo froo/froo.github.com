@@ -105,6 +105,10 @@ table {
 	list-style:none;
 }
 
+#home ul li span{
+  padding-right: 0.5em;
+}
+
 /*****************************************************************************/
 /*
 /* Posts
@@ -121,6 +125,15 @@ table {
 
 .post p{
 	margin-bottom: 1em;
+}
+
+.post ul li{
+  margin-left: 3em;
+  padding-bottom: 0.5em;
+}
+
+.post ul li p{
+  margin: 0;
 }
 
 .post img{

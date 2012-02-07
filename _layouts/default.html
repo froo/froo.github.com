@@ -24,14 +24,9 @@
 	<link rel="apple-touch-startup-image" href="/images/ios-splash.png" />
 
 	<!-- Scripts -->
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script src="/js/bootstrap-twipsy.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('img[rel=twipsy]').twipsy({'html': true,'offset':3});
-			$('a[rel=twipsy]').twipsy({'html': true,'offset':3});
-		})
-	</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap-tooltip.js"></script>
 
 	<!-- Title -->
 	<title>{{ page.title }}{% if page.title %} |{% endif %} Streaming</title>
@@ -54,7 +49,7 @@
 	<!--  Footer Part -->
 	<div class="footer"> 
 		<div class="avatar">
-			<img src="/images/avatar.jpg" alt="avatar" width="48px" height="48px" rel="twipsy" title="©2012 Chenhui Zhang">
+			<img src="/images/avatar.jpg" alt="avatar" width="48px" height="48px" rel="tooltip" title="©2012 Chenhui Zhang">
 		</div>
 		<div class="foot-nav">
 			<a href="/projects.html">Projects</a>
@@ -70,5 +65,11 @@
 	<!--  Footer Part -->
 
 </div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('img[rel=tooltip]').tooltip('show');
+		})
+	</script>
 </body>
 </html>

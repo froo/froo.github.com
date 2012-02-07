@@ -13,7 +13,7 @@
 
 .title p{
 	text-align:center;
-	font-size:64px;
+	font-size:48px;
 }
 
 .makers .holder{
@@ -59,7 +59,7 @@
 }
 
 a{
-	opacity:0.7;
+	opacity:0.8;
 }
 
 a:hover{

@@ -1,0 +1,67 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.body{
+	height:100%;
+}
+
+.title, .slider, .makers, .projects{
+	margin: 5em 20em;
+}
+
+.title p{
+	text-align:center;
+	font-size:64px;
+}
+
+.makers .holder{
+	visibility: hidden;
+}
+
+.makers .froo{
+	margin-left: 6em;
+	float: left;
+	width:15em;
+	text-align:left;
+}
+
+.makers .kangk{
+	margin-right: 6em;
+	float:right;
+	width:15em;
+	text-align:right;
+}
+
+.makers p{
+	font-size:24;
+	line-height:1.2;
+}
+
+.slider .carousel .carousel-inner{
+	margin:0 auto;
+	width:320px;
+}
+
+.projects #no1,
+.projects #no2,
+.projects #no3{
+	display: inline;
+	position: relative;
+	margin: auto 3.5em;
+}
+
+.projects img{
+	border: 2px solid white;
+	border-radius:5;
+	box-shadow:1px 1px .5px rgba(0,0,0,.3);
+}
+
+a{
+	opacity:0.7;
+}
+
+a:hover{
+	opacity: 1;
+}

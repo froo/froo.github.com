@@ -19,25 +19,33 @@ body{
 	margin-right:3em;
 }
 
-.projects img{
-	border: 2px solid white;
-	border-radius:5;
-	box-shadow:1px 1px .5px rgba(0,0,0,.3);
+.projects{
+	.pimg{
+		padding: .5em;
+		border-radius:5;
+		background:rgba(0,0,0,1);
+	}
+	img{
+		box-shadow:1px 1px .5px rgba(0,0,0,.3);
+	}
 }
 
-.title p{
-	text-align:center;
-	font-size:48px;
+.title{
+	p{
+		text-align:center;
+		font-size:48px;
+	}
 }
 
 .slider{
 	background-color:white;
 	border-radius:8;
-}
-
-.slider .carousel .carousel-inner{
-	margin:0 auto;
-	width:320px;
+	.carousel{
+		.carousel-inner{
+			margin:0 auto;
+			width:320px;
+		}
+	}
 }
 
 a{

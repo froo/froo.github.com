@@ -10,49 +10,64 @@ html, body {
   height: 100%;
 }
 body {
-  background-image: url('images/idev.png');
+  background-image: url('/images/idev.png');
+  font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti, "Mircosoft Yahei" !important;
 }
-.title, .slider, .projects {
+.content {
   margin: 3em 20em;
-}
-.title p {
-  text-align: center;
-  font-size: 48px;
-}
-.title p:after {
-  content: "";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  height: 0;
-}
-.projects img {
-  border: 3px solid white;
-  box-shadow: 1.5px 1.5px 1px grey;
-}
-.projects #no1, .projects #no2, .projects #no3 {
-  display: inline;
-}
-.projects #no1 {
-  float: left;
-}
-.projects #no2 {
-  margin-left: ;
-}
-.projects #no3 {
-  float: right;
-}
-.projects a {
-  opacity: 0.8;
-}
-.projects a:hover {
-  opacity: 1;
-}
-.slider {
   background-color: white;
   border-radius: 8;
+  -moz-border-radius: 8;
+  -webkit-border-radius: 8;
+  box-shadow: 4px 4px 2px #d0d0d0;
+  -moz-box-shadow: 4px 4px 2px #d0d0d0;
+  -webkit-box-shadow: 4px 4px 2px #d0d0d0;
+}
+.title,
+.des,
+.slider,
+.itunes {
+  margin: 2em 3em;
+}
+.title {
+  width: 40em;
+  height: 10em;
+  margin: 0 auto;
+  padding-top: 2em;
+  background: url('/images/icon_basetemp.png') no-repeat left center;
+  background-size: 120px 120px;
+}
+.title p {
+  padding-left: 140px;
+  font-size: 48px;
+  line-height: 2.5em;
+}
+.des {
+  width: 26.8em;
+  margin: 2em auto;
+  background-color: #ebebeb;
+  padding: 1em;
+  border-radius: 3;
+}
+.des p {
+  font-size: 24px;
+  line-height: 1.6;
 }
 .slider .carousel .carousel-inner {
   margin: 0 auto;
   width: 320px;
+}
+.itunes a {
+  display: block;
+  opacity: 0.9;
+  -moz-opacity: 0.9;
+  filter: alpha(opacity=9);
+}
+.itunes a:hover {
+  opacity: 1;
+  -moz-opacity: 1;
+  filter: alpha(opacity=1);
+}
+.itunes img {
+  padding: 2em 30%;
 }

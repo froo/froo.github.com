@@ -31,6 +31,20 @@
 
 	<!-- Title -->
 	<title>{{ page.title }}{% if page.title %} |{% endif %} Streaming</title>
+
+	<!-- GA codes -->
+	<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11079342-5']);
+  _gaq.push(['_setDomainName', 'chenhui.ch']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+	</script>
 </head>
 <body>
 <div class="site">
@@ -53,7 +67,7 @@
 			<a href="/resume"><img src="/images/avatar.jpg" alt="avatar" width="48px" height="48px" rel="tooltip" title="©2012 Chenhui Zhang 点击获取简历"></a>
 		</div>
 		<div class="foot-nav">
-			<a href="/projects">Projects</a>
+			<p>©2012 Chenhui Zhang</p>
 			<ul>
 				<li><a href="https://twitter.com/peetryzch">Twitter</a></li>
 				<li><a href="http://weibo.com/froo">Weibo</a></li>
@@ -66,10 +80,10 @@
 
 </div>
 
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('img[rel=tooltip]').tooltip();
-		})
-	</script>
+	// <script type="text/javascript">
+	// 	$(document).ready(function(){
+	// 		$('img[rel=tooltip]').tooltip();
+	// 	})
+	// </script>
 </body>
 </html>

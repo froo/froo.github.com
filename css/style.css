@@ -110,6 +110,11 @@ table {
   padding-right: 0.5em;
 }
 
+.listing-seperator{
+	margin-bottom:0.3em;
+	font-weight:bold;
+}
+
 /*****************************************************************************/
 /*
 /* Posts

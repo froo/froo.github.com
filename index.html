@@ -6,7 +6,7 @@ title: Chenhui Zhang
 <div id="home">
   	<h3>Blog Posts</h3>
  <ul class="listing">
-{% for post in paginator.posts %}
+{% for post in site.posts %}
   {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
   {% if year != y %}
     {% assign year = y %}

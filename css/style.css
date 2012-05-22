@@ -110,11 +110,6 @@ table {
   padding-right: 0.5em;
 }
 
-#home .listing-seperator{
-	margin-bottom:0.5em;
-	font-weight:bold;
-}
-
 /*****************************************************************************/
 /*
 /* Posts
@@ -142,7 +137,15 @@ table {
   margin: 0;
 }
 
+#home ul li{
+  margin: 0;
+  padding: 0;
+}
 
+#home .listing-seperator{
+	margin-bottom:0.5em;
+	font-weight:bold;
+}
 
 .post img{
 	margin: 0.8em auto 1.2em 0;

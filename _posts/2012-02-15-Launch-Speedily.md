@@ -3,8 +3,6 @@ layout: default
 
 ---
 
-##{{page.title}}
-
 启动，是用户与应用产生交互的第一步，而速度则是这个环节中影响体验非常重要的一个因素。优化应用的启动速度可以从设计和开发两个角度来协力解决。
 
 ###了解启动
@@ -18,7 +16,6 @@ layout: default
 
 ![](http://oleb.net/media/xcode-4-2-app-launch-sequence-700px.png)
 
->图片来自[Ole Begemann](http://oleb.net)
 
 了解一下一个应用的启动需要过程中发生了什么。从上图中可以看出，整个应用的启动流程主要包括：读取应用配置文件 -> 创建UIApplication实例及其委托 -> 实现`application:didFinishLaunchingWithOptions:`中的操作 -> 创建并显示首页视图（RootViewController）。
 
@@ -45,6 +42,3 @@ Instruments: Time Profiler工具可以用来测试启动速度。
 在代码实现中，要注意的最重要的一点是一定需要避免阻塞主线程的事件，尤其是网络请求。如果首页中展现的内容不可避免地需要通过这些事件来完成，那么先完成首页视图界面主要框架的载入，同时使用`dispatch_async()`来进行网络请求或是数据读取，并在完成后更新首页视图。
 
 其次，可以深入的是首页中视图元素的绘制效率。影响绘制性能的主要原因是图层中过多的透明度，和需要对图片进行缩放的操作。
-
-***
-如果有需要指正的地方，欢迎通过[微博](http://weibo.com/froo)或[Twitter](https://twitter.com/peetryzch)来和我讨论;)

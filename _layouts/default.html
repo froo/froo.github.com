@@ -11,7 +11,7 @@
 <body>
 <div class="container">
 	<div class="row">
-		<div class="span3">
+		<div class="span3 hidden-phone">
 			<div class="sider">
 				<h1><a href="/">Streaming</a></h1>
 				<p class="muted">Thoughts collection of Chenhui Zhang, who is a mobile product designer and knows a little about Objective-C and Python.</p>
@@ -19,8 +19,9 @@
 		</div>
 		<div class="span9">
 			<div class="main">
-				{% if ispost %}
-					<h2>{{ page.title }}</h2>
+				{% if page.title %}
+					<div class="title"><h2>{{ page.title }}</h2></div>
+			      	<div class="date"><p class="muted">{{ page.date|date:"%Y-%m-%d" }}</p></div>
 				{% endif %}
 				{{ content }}
 			</div>

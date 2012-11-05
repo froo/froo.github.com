@@ -27,3 +27,13 @@ img{
 .content{
   margin-bottom: 10%;
 } 
+
+ul{
+  list-style: none;
+  margin: 0;
+  font-size: 105%;
+}
+
+.archive p{
+  float: right;
+}
